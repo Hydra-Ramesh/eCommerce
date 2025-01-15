@@ -1,6 +1,7 @@
 package com.ramesh.eCommerce.models;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 @Entity
@@ -16,14 +17,14 @@ public class Category {
 
     private String name;
 
-    @NonNull
+    @NotNull
     @Column(unique = true)
-    private String catagoryId;
+    private String categoryId;
 
-    @ManyToMany
-    private Category perentCatagory;
+    @OneToOne
+    @JoinColumn(unique = true)
+    private Category parentCategory;
 
-
+    @NotNull
     private Integer level;
-
 }

@@ -13,7 +13,7 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode
-public class Cupon {
+public class Coupon {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -22,17 +22,15 @@ public class Cupon {
 
     private double discountPercentage;
 
-    private LocalDate velidityStartDate;
+    private LocalDate validityStartDate;
 
-    private LocalDate velidityEndDate;
+    private LocalDate validityEndDate;
 
     private double minimumOrderValue;
 
     private boolean isActive = true;
 
-    @ManyToMany(mappedBy = "usedCupon")
+    @ManyToMany(mappedBy = "usedCoupon")
     private Set<User> usedByUsers = new HashSet<>();
-
-
 
 }

@@ -36,6 +36,6 @@ public class User {
 
     @ManyToMany
     @JsonIgnore
-    private Set<Cupon> usedCupon = new HashSet<>();
+    private Set<Coupon> usedCoupon = new HashSet<>();
 
 }
